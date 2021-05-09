@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ID>query_main_UIS_CIRCUIT</ID>
+  <PopulationObjectName>query_main_UIS_CIRCUIT</PopulationObjectName>
+  <TableName>UIS_CIRCUIT</TableName>
+  <RootItemID>query_query_main_UIS_CIRCUIT</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <IidFinderProp />
+  <InputArguments>
+    <Arg name="CIRCUIT_ID" id="queryCol_0" dataType="Real" index="0" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_main_UIS_CIRCUIT" name="query_main_UIS_CIRCUIT" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="UIS_CIRCUIT_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="CIRCUIT_ID" dataType="Real" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="CIRCUIT_FORMAT" dataType="Text" index="1" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="ATT_CKT_ID" dataType="Text" index="2" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_3" name="TOS" dataType="Text" index="3" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_4" name="SERVICE_TYPE" dataType="Text" index="4" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_5" name="CLCI_SPL_SER_SERIAL_NUMBER" dataType="Real" index="5" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_6" name="CLCI_SPL_TEL" dataType="Text" index="6" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_7" name="MASTER_CUSTOMER_NUMBER" dataType="Text" index="7" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_8" name="GRC" dataType="Text" index="8" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_9" name="SOC" dataType="Text" index="9" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_10" name="BILLING_NAME" dataType="Text" index="10" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_11" name="MULTIPOINT_INDICATOR" dataType="Text" index="11" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_12" name="MARKET_SEGMENTATION_ID" dataType="Text" index="12" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_13" name="SERVICE_CLASSIFICATION" dataType="Text" index="13" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_14" name="IPL_INDICATOR" dataType="Text" index="14" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_15" name="CUSTOMER_NAME" dataType="Text" index="15" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_16" name="SPEED" dataType="Text" index="16" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_17" name="BASE_TRAFFIC_NUMBER" dataType="Text" index="17" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_18" name="CLCI_MSG_LOC_A" dataType="Text" index="18" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_19" name="CLCI_MSG_LOC_Z" dataType="Text" index="19" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_20" name="PARENT_ATT_CKT_ID" dataType="Text" index="20" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_21" name="CLCI_MSG_TTM" dataType="Text" index="21" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_22" name="MARKET_CODE" dataType="Text" index="22" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_23" name="POCITS_MCN" dataType="Text" index="23" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_24" name="SYSTEM_RELATIONSHIP_FLAG" dataType="Text" index="24" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_25" name="INTERNATIONAL_INDICATOR" dataType="Text" index="25" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_26" name="SPEED_NUMERIC" dataType="Real" index="26" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_27" name="EM_SERVICE_CLASS" dataType="Text" index="27" />
+      </OutputsList>
+      <SQL><![CDATA[SELECT * FROM main.UIS_CIRCUIT]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="60" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_0" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_ec371de002fc4adfaf894c2079873ad9" />
+    <Link partId="61" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_1" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_15e7bd59db5a4719a9eb6933810835a4" />
+    <Link partId="62" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_2" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_1afe586622a64728a93870bc88130634" />
+    <Link partId="63" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_3" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_87a352443c064a9ab4d449c0d4ec3150" />
+    <Link partId="64" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_4" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_162efe000bd645d9a4fde9974d3e01b2" />
+    <Link partId="65" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_5" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_b3532cdc08b54eacbae9c52553da2d22" />
+    <Link partId="66" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_6" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_d76f091745074d3192be1716f1b967cb" />
+    <Link partId="67" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_7" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_f238646a53244fa582f95b9ce032219d" />
+    <Link partId="68" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_8" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_ea3a55e79fde43a5a59eabe591c47be2" />
+    <Link partId="69" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_9" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_30254fdfab124659adb8e98e02c5d077" />
+    <Link partId="70" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_10" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_95d1afe41e7844009da6ef290f6e6c38" />
+    <Link partId="71" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_11" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_550fb20236e844719cb32290a8d0e71b" />
+    <Link partId="72" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_12" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_d8be57b5dded4c928104252828bd2d6d" />
+    <Link partId="73" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_13" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_4a4edad8002040a29f5dc6d3f565a014" />
+    <Link partId="74" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_14" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_84435b1df7844926b0b023fcc6c158ac" />
+    <Link partId="75" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_15" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_999fc7939ab540b69ab145771d75d6a5" />
+    <Link partId="76" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_16" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_90f31b39b3384cacbbe2915f61f0ee1c" />
+    <Link partId="77" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_17" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_c3e4bf2eb99341c883912a17bde1d392" />
+    <Link partId="78" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_18" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_9050acc4aae64ecd9334ca261f52347b" />
+    <Link partId="79" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_19" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_3615984af1204b2a8efb78b984a750cc" />
+    <Link partId="80" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_20" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_667ac455d1ba4d6d9006bb090e8791ae" />
+    <Link partId="81" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_21" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_89ebdc60ced14345ae25794560c3936f" />
+    <Link partId="82" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_22" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_a0662ed9e413423d80e60182b78183ee" />
+    <Link partId="83" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_23" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_975dd61fb1c149f9acd61d3773fe71d7" />
+    <Link partId="84" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_24" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_962aad3488bd4b0caf0ba55fc99c0503" />
+    <Link partId="85" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_25" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_69a8fb5188414fc994090f79fe0433f8" />
+    <Link partId="86" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_26" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_6be94ca828534941b0ad7c55510b9956" />
+    <Link partId="87" fromNodeOrder="0" fromItemID="query_query_main_UIS_CIRCUIT" fromColID="queryCol_27" toItemID="tbl_UIS_CIRCUIT" toColID="tblCol_f5435278cc36415e892b278e1cb7f61d" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="UIS_CIRCUIT.query_main_UIS_CIRCUIT.k2tablePop.xml" lastPartID="87">
+      <TableNode partID="0" name="UIS_CIRCUIT" pos="383 5.942734" width="252.999985" />
+      <DBQueryNode partID="31" name="UIS_CIRCUIT_DB" pos="10 0.979187" size="253 398.041626" isRoot="true">
+        <DBQuery>{"Name":"query_main_UIS_CIRCUIT","ID":"query_query_main_UIS_CIRCUIT","ConnName":"UIS_CIRCUIT_DB","SQL":"SELECT * FROM main.UIS_CIRCUIT","ColumnsList":[{"ID":"queryCol_0","Name":"CIRCUIT_ID","DataType":"Real","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"CIRCUIT_FORMAT","DataType":"Text","Index":1,"IsInputArgument":false},{"ID":"queryCol_2","Name":"ATT_CKT_ID","DataType":"Text","Index":2,"IsInputArgument":false},{"ID":"queryCol_3","Name":"TOS","DataType":"Text","Index":3,"IsInputArgument":false},{"ID":"queryCol_4","Name":"SERVICE_TYPE","DataType":"Text","Index":4,"IsInputArgument":false},{"ID":"queryCol_5","Name":"CLCI_SPL_SER_SERIAL_NUMBER","DataType":"Real","Index":5,"IsInputArgument":false},{"ID":"queryCol_6","Name":"CLCI_SPL_TEL","DataType":"Text","Index":6,"IsInputArgument":false},{"ID":"queryCol_7","Name":"MASTER_CUSTOMER_NUMBER","DataType":"Text","Index":7,"IsInputArgument":false},{"ID":"queryCol_8","Name":"GRC","DataType":"Text","Index":8,"IsInputArgument":false},{"ID":"queryCol_9","Name":"SOC","DataType":"Text","Index":9,"IsInputArgument":false},{"ID":"queryCol_10","Name":"BILLING_NAME","DataType":"Text","Index":10,"IsInputArgument":false},{"ID":"queryCol_11","Name":"MULTIPOINT_INDICATOR","DataType":"Text","Index":11,"IsInputArgument":false},{"ID":"queryCol_12","Name":"MARKET_SEGMENTATION_ID","DataType":"Text","Index":12,"IsInputArgument":false},{"ID":"queryCol_13","Name":"SERVICE_CLASSIFICATION","DataType":"Text","Index":13,"IsInputArgument":false},{"ID":"queryCol_14","Name":"IPL_INDICATOR","DataType":"Text","Index":14,"IsInputArgument":false},{"ID":"queryCol_15","Name":"CUSTOMER_NAME","DataType":"Text","Index":15,"IsInputArgument":false},{"ID":"queryCol_16","Name":"SPEED","DataType":"Text","Index":16,"IsInputArgument":false},{"ID":"queryCol_17","Name":"BASE_TRAFFIC_NUMBER","DataType":"Text","Index":17,"IsInputArgument":false},{"ID":"queryCol_18","Name":"CLCI_MSG_LOC_A","DataType":"Text","Index":18,"IsInputArgument":false},{"ID":"queryCol_19","Name":"CLCI_MSG_LOC_Z","DataType":"Text","Index":19,"IsInputArgument":false},{"ID":"queryCol_20","Name":"PARENT_ATT_CKT_ID","DataType":"Text","Index":20,"IsInputArgument":false},{"ID":"queryCol_21","Name":"CLCI_MSG_TTM","DataType":"Text","Index":21,"IsInputArgument":false},{"ID":"queryCol_22","Name":"MARKET_CODE","DataType":"Text","Index":22,"IsInputArgument":false},{"ID":"queryCol_23","Name":"POCITS_MCN","DataType":"Text","Index":23,"IsInputArgument":false},{"ID":"queryCol_24","Name":"SYSTEM_RELATIONSHIP_FLAG","DataType":"Text","Index":24,"IsInputArgument":false},{"ID":"queryCol_25","Name":"INTERNATIONAL_INDICATOR","DataType":"Text","Index":25,"IsInputArgument":false},{"ID":"queryCol_26","Name":"SPEED_NUMERIC","DataType":"Real","Index":26,"IsInputArgument":false},{"ID":"queryCol_27","Name":"EM_SERVICE_CLASS","DataType":"Text","Index":27,"IsInputArgument":false}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="60" from="0" to="1" pointsArr="263 37.0156441 273 37.0156441 313 37 333 37 373 36.97919 383 36.97919" fromNodePartID="31" fromNodeColumnName="CIRCUIT_ID" toNodePartID="0" toNodeColumnName="CIRCUIT_ID" />
+      <Link partID="61" from="2" to="3" pointsArr="263 49.088562 273 49.088562 313 49 333 49 373 49.05211 383 49.05211" fromNodePartID="31" fromNodeColumnName="CIRCUIT_FORMAT" toNodePartID="0" toNodeColumnName="CIRCUIT_FORMAT" />
+      <Link partID="62" from="4" to="5" pointsArr="263 61.1614761 273 61.1614761 313 61 333 61 373 61.1250229 383 61.1250229" fromNodePartID="31" fromNodeColumnName="ATT_CKT_ID" toNodePartID="0" toNodeColumnName="ATT_CKT_ID" />
+      <Link partID="63" from="6" to="7" pointsArr="263 73.23439 273 73.23439 313 73 333 73 373 73.19794 383 73.19794" fromNodePartID="31" fromNodeColumnName="TOS" toNodePartID="0" toNodeColumnName="TOS" />
+      <Link partID="64" from="8" to="9" pointsArr="263 85.3073044 273 85.3073044 313 85 333 85 373 85.27085 383 85.27085" fromNodePartID="31" fromNodeColumnName="SERVICE_TYPE" toNodePartID="0" toNodeColumnName="SERVICE_TYPE" />
+      <Link partID="65" from="10" to="11" pointsArr="263 97.38022 273 97.38022 313 97 333 97 373 97.3437653 383 97.3437653" fromNodePartID="31" fromNodeColumnName="CLCI_SPL_SER_SERIAL_NUMBER" toNodePartID="0" toNodeColumnName="CLCI_SPL_SER_SERIAL_NUMBER" />
+      <Link partID="66" from="12" to="13" pointsArr="263 109.45314 273 109.45314 313 109 333 109 373 109.416687 383 109.416687" fromNodePartID="31" fromNodeColumnName="CLCI_SPL_TEL" toNodePartID="0" toNodeColumnName="CLCI_SPL_TEL" />
+      <Link partID="67" from="14" to="15" pointsArr="263 121.526062 273 121.526062 313 122 333 122 373 121.489609 383 121.489609" fromNodePartID="31" fromNodeColumnName="MASTER_CUSTOMER_NUMBER" toNodePartID="0" toNodeColumnName="MASTER_CUSTOMER_NUMBER" />
+      <Link partID="68" from="16" to="17" pointsArr="263 133.598984 273 133.598984 313 134 333 134 373 133.562531 383 133.562531" fromNodePartID="31" fromNodeColumnName="GRC" toNodePartID="0" toNodeColumnName="GRC" />
+      <Link partID="69" from="18" to="19" pointsArr="263 145.6719 273 145.6719 313 146 333 146 373 145.635452 383 145.635452" fromNodePartID="31" fromNodeColumnName="SOC" toNodePartID="0" toNodeColumnName="SOC" />
+      <Link partID="70" from="20" to="21" pointsArr="263 157.744827 273 157.744827 313 158 333 158 373 157.708374 383 157.708374" fromNodePartID="31" fromNodeColumnName="BILLING_NAME" toNodePartID="0" toNodeColumnName="BILLING_NAME" />
+      <Link partID="71" from="22" to="23" pointsArr="263 169.817734 273 169.817734 313 170 333 170 373 169.781281 383 169.781281" fromNodePartID="31" fromNodeColumnName="MULTIPOINT_INDICATOR" toNodePartID="0" toNodeColumnName="MULTIPOINT_INDICATOR" />
+      <Link partID="72" from="24" to="25" pointsArr="263 181.89064 273 181.89064 313 182 333 182 373 181.854187 383 181.854187" fromNodePartID="31" fromNodeColumnName="MARKET_SEGMENTATION_ID" toNodePartID="0" toNodeColumnName="MARKET_SEGMENTATION_ID" />
+      <Link partID="73" from="26" to="27" pointsArr="263 193.963547 273 193.963547 313 194 333 194 373 193.9271 383 193.9271" fromNodePartID="31" fromNodeColumnName="SERVICE_CLASSIFICATION" toNodePartID="0" toNodeColumnName="SERVICE_CLASSIFICATION" />
+      <Link partID="74" from="28" to="29" pointsArr="263 206.036453 273 206.036453 313 206 333 206 373 206 383 206" fromNodePartID="31" fromNodeColumnName="IPL_INDICATOR" toNodePartID="0" toNodeColumnName="IPL_INDICATOR" />
+      <Link partID="75" from="30" to="31" pointsArr="263 218.10936 273 218.10936 313 218 333 218 373 218.0729 383 218.0729" fromNodePartID="31" fromNodeColumnName="CUSTOMER_NAME" toNodePartID="0" toNodeColumnName="CUSTOMER_NAME" />
+      <Link partID="76" from="32" to="33" pointsArr="263 230.182266 273 230.182266 313 230 333 230 373 230.145813 383 230.145813" fromNodePartID="31" fromNodeColumnName="SPEED" toNodePartID="0" toNodeColumnName="SPEED" />
+      <Link partID="77" from="34" to="35" pointsArr="263 242.255173 273 242.255173 313 242 333 242 373 242.218719 383 242.218719" fromNodePartID="31" fromNodeColumnName="BASE_TRAFFIC_NUMBER" toNodePartID="0" toNodeColumnName="BASE_TRAFFIC_NUMBER" />
+      <Link partID="78" from="36" to="37" pointsArr="263 254.328079 273 254.328079 313 254 333 254 373 254.291626 383 254.291626" fromNodePartID="31" fromNodeColumnName="CLCI_MSG_LOC_A" toNodePartID="0" toNodeColumnName="CLCI_MSG_LOC_A" />
+      <Link partID="79" from="38" to="39" pointsArr="263 266.401 273 266.401 313 266 333 266 373 266.364563 383 266.364563" fromNodePartID="31" fromNodeColumnName="CLCI_MSG_LOC_Z" toNodePartID="0" toNodeColumnName="CLCI_MSG_LOC_Z" />
+      <Link partID="80" from="40" to="41" pointsArr="263 278.473877 273 278.473877 313 278 333 278 373 278.437439 383 278.437439" fromNodePartID="31" fromNodeColumnName="PARENT_ATT_CKT_ID" toNodePartID="0" toNodeColumnName="PARENT_ATT_CKT_ID" />
+      <Link partID="81" from="42" to="43" pointsArr="263 290.5468 273 290.5468 313 291 333 291 373 290.510376 383 290.510376" fromNodePartID="31" fromNodeColumnName="CLCI_MSG_TTM" toNodePartID="0" toNodeColumnName="CLCI_MSG_TTM" />
+      <Link partID="82" from="44" to="45" pointsArr="263 302.619751 273 302.619751 313 303 333 303 373 302.5833 383 302.5833" fromNodePartID="31" fromNodeColumnName="MARKET_CODE" toNodePartID="0" toNodeColumnName="MARKET_CODE" />
+      <Link partID="83" from="46" to="47" pointsArr="263 314.6927 273 314.6927 313 315 333 315 373 314.65625 383 314.65625" fromNodePartID="31" fromNodeColumnName="POCITS_MCN" toNodePartID="0" toNodeColumnName="POCITS_MCN" />
+      <Link partID="84" from="48" to="49" pointsArr="263 326.765625 273 326.765625 313 327 333 327 373 326.7292 383 326.7292" fromNodePartID="31" fromNodeColumnName="SYSTEM_RELATIONSHIP_FLAG" toNodePartID="0" toNodeColumnName="SYSTEM_RELATIONSHIP_FLAG" />
+      <Link partID="85" from="50" to="51" pointsArr="263 338.838562 273 338.838562 313 339 333 339 373 338.802124 383 338.802124" fromNodePartID="31" fromNodeColumnName="INTERNATIONAL_INDICATOR" toNodePartID="0" toNodeColumnName="INTERNATIONAL_INDICATOR" />
+      <Link partID="86" from="52" to="53" pointsArr="263 350.9115 273 350.9115 313 351 333 351 373 350.875061 383 350.875061" fromNodePartID="31" fromNodeColumnName="SPEED_NUMERIC" toNodePartID="0" toNodeColumnName="SPEED_NUMERIC" />
+      <Link partID="87" from="54" to="55" pointsArr="263 362.984436 273 362.984436 313 363 333 363 373 362.948 383 362.948" fromNodePartID="31" fromNodeColumnName="EM_SERVICE_CLASS" toNodePartID="0" toNodeColumnName="EM_SERVICE_CLASS" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>
