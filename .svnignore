@@ -14,8 +14,7 @@ ludbXMLs.zip
 *.xml.tmp
 out
 .idea
-Implementation/SharedObjects/Java/*.iml
-Implementation/LogicalUnits/*/Java/*.iml
+*.iml
 .studio
 FabricHome
 LocalDeploy
