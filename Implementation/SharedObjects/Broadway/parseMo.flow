@@ -1,0 +1,468 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Read File",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "FileRead1",
+                            "actorType": {
+                                "parentType": "FileRead",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "file://"
+                                    },
+                                    {
+                                        "name": "path",
+                                        "const": "C:\\Work\\s_rec\\data\\MO.20160127"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Parse lines",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "LinesParser1",
+                            "actorType": {
+                                "parentType": "LinesParser",
+                                "inputs": [
+                                    {
+                                        "name": "stream",
+                                        "const": "",
+                                        "isDefault": true
+                                    },
+                                    {
+                                        "name": "trim",
+                                        "const": true
+                                    },
+                                    {
+                                        "name": "skipEmptyLines",
+                                        "const": true
+                                    },
+                                    {
+                                        "name": "skipHead",
+                                        "const": 1
+                                    },
+                                    {
+                                        "name": "skipTail",
+                                        "const": 1
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [
+                        "Parse lines"
+                    ],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "JavaScript1",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": {
+                                            "userCode": "var recordType = line.substr(0, 1);\r\nvar result = {\r\n\tCIRCUIT_IDENTIFICATION : line.substr(1, 9).trim()\r\n};\r\nif(recordType === 'C') {\r\n\tresult[\"CIRCUIT_IDENTIFICATION\"] = line.substr(1, 9).trim();\r\n\tresult[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(10, 3).trim();\r\n\tresult[\"CKL_NO\"] = line.substr(12, 5).trim();\r\n\tresult[\"CKL_PROVG_ACC_ARNGMT\"] = line.substr(17, 2).trim();\r\n\tresult[\"LSO_CLLI\"] = line.substr(19, 11).trim();\r\n\tresult[\"COUNTRY_CODE\"] = line.substr(30, 2).trim();\r\n\tresult[\"TELE_AUTH\"] = line.substr(32, 12).trim();\r\n\tresult[\"ATT_CKT_ID\"] = line.substr(44, 25).trim();\r\n\tresult[\"ACCESS_CIRCUIT_ID\"] = line.substr(69).trim();\r\n\tresult[\"TYPE\"] = \"C\";\r\n} else if(recordType === 'S') {\r\n\tresult[\"CIRCUIT_IDENTIFICATION\"] = line.substr(1, 9).trim();\r\n\tresult[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(10, 3).trim();\r\n\tresult[\"CKL_NO\"] = line.substr(12, 5).trim();\r\n\tresult[\"CKL_PROVG_ACC_ARNGMT\"] = line.substr(17, 2).trim();\r\n\tresult[\"LSO_CLLI\"] = line.substr(19, 11).trim();\r\n\tresult[\"COUNTRY_CODE\"] = line.substr(30, 2).trim();\r\n\tresult[\"TELE_AUTH\"] = line.substr(32, 12).trim();\r\n\tresult[\"ATT_CKT_ID\"] = line.substr(44, 25).trim();\r\n\tresult[\"ACCESS_CIRCUIT_ID\"] = line.substr(69).trim();\r\n\tresult[\"TYPE\"] = \"S\";\r\n}\r\nresult;\r\n",
+                                            "script": "var recordType = line.substr(0, 1);\nvar result = {\n  CIRCUIT_IDENTIFICATION: line.substr(1, 9).trim()\n};\n\nif (recordType === 'C') {\n  result[\"CIRCUIT_IDENTIFICATION\"] = line.substr(1, 9).trim();\n  result[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(10, 3).trim();\n  result[\"CKL_NO\"] = line.substr(12, 5).trim();\n  result[\"CKL_PROVG_ACC_ARNGMT\"] = line.substr(17, 2).trim();\n  result[\"LSO_CLLI\"] = line.substr(19, 11).trim();\n  result[\"COUNTRY_CODE\"] = line.substr(30, 2).trim();\n  result[\"TELE_AUTH\"] = line.substr(32, 12).trim();\n  result[\"ATT_CKT_ID\"] = line.substr(44, 25).trim();\n  result[\"ACCESS_CIRCUIT_ID\"] = line.substr(69).trim();\n  result[\"TYPE\"] = \"C\";\n} else if (recordType === 'S') {\n  result[\"CIRCUIT_IDENTIFICATION\"] = line.substr(1, 9).trim();\n  result[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(10, 3).trim();\n  result[\"CKL_NO\"] = line.substr(12, 5).trim();\n  result[\"CKL_PROVG_ACC_ARNGMT\"] = line.substr(17, 2).trim();\n  result[\"LSO_CLLI\"] = line.substr(19, 11).trim();\n  result[\"COUNTRY_CODE\"] = line.substr(30, 2).trim();\n  result[\"TELE_AUTH\"] = line.substr(32, 12).trim();\n  result[\"ATT_CKT_ID\"] = line.substr(44, 25).trim();\n  result[\"ACCESS_CIRCUIT_ID\"] = line.substr(69).trim();\n  result[\"TYPE\"] = \"S\";\n}\n\nresult;"
+                                        }
+                                    },
+                                    {
+                                        "name": "line",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "CIRCUIT_IDENTIFICATION": {
+                                                    "type": "string"
+                                                },
+                                                "CIRCUIT_SEGMENT_NUMBER": {
+                                                    "type": "string"
+                                                },
+                                                "CKL_NO": {
+                                                    "type": "string"
+                                                },
+                                                "CKL_PROVG_ACC_ARNGMT": {
+                                                    "type": "string"
+                                                },
+                                                "LSO_CLLI": {
+                                                    "type": "string"
+                                                },
+                                                "COUNTRY_CODE": {
+                                                    "type": "string"
+                                                },
+                                                "TELE_AUTH": {
+                                                    "type": "string"
+                                                },
+                                                "ATT_CKT_ID": {
+                                                    "type": "string"
+                                                },
+                                                "ACCESS_CIRCUIT_ID": {
+                                                    "type": "string"
+                                                },
+                                                "TYPE": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 5",
+                    "dependsOnList": [
+                        "Parse lines"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "DbLoad1",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "UIS_CIRCUIT_DB"
+                                    },
+                                    {
+                                        "name": "command",
+                                        "const": "upsert"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "main"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "UIS_CIRCUIT"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "CIRCUIT_ID",
+                                            "CIRCUIT_FORMAT",
+                                            "ATT_CKT_ID",
+                                            "TOS",
+                                            "SERVICE_TYPE",
+                                            "CLCI_SPL_SER_SERIAL_NUMBER",
+                                            "CLCI_SPL_TEL",
+                                            "MASTER_CUSTOMER_NUMBER",
+                                            "GRC",
+                                            "SOC",
+                                            "BILLING_NAME",
+                                            "MULTIPOINT_INDICATOR",
+                                            "MARKET_SEGMENTATION_ID",
+                                            "SERVICE_CLASSIFICATION",
+                                            "IPL_INDICATOR",
+                                            "CUSTOMER_NAME",
+                                            "SPEED",
+                                            "BASE_TRAFFIC_NUMBER",
+                                            "CLCI_MSG_LOC_A",
+                                            "CLCI_MSG_LOC_Z",
+                                            "PARENT_ATT_CKT_ID",
+                                            "CLCI_MSG_TTM",
+                                            "MARKET_CODE",
+                                            "POCITS_MCN",
+                                            "SYSTEM_RELATIONSHIP_FLAG",
+                                            "INTERNATIONAL_INDICATOR",
+                                            "SPEED_NUMERIC",
+                                            "EM_SERVICE_CLASS"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "CIRCUIT_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "CIRCUIT_ID",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "CIRCUIT_FORMAT",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "ATT_CKT_ID",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "TOS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SERVICE_TYPE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CLCI_SPL_SER_SERIAL_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CLCI_SPL_TEL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MASTER_CUSTOMER_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "GRC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SOC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BILLING_NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MULTIPOINT_INDICATOR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MARKET_SEGMENTATION_ID",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "SERVICE_CLASSIFICATION",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IPL_INDICATOR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CUSTOMER_NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SPEED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BASE_TRAFFIC_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CLCI_MSG_LOC_A",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CLCI_MSG_LOC_Z",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PARENT_ATT_CKT_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CLCI_MSG_TTM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MARKET_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POCITS_MCN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SYSTEM_RELATIONSHIP_FLAG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "INTERNATIONAL_INDICATOR",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "SPEED_NUMERIC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EM_SERVICE_CLASS",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "FileRead1",
+                "name": "stream"
+            },
+            "rightPort": {
+                "actor": "LinesParser1",
+                "name": "stream"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "LinesParser1",
+                "name": "object"
+            },
+            "rightPort": {
+                "actor": "JavaScript1",
+                "name": "line"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "JavaScript1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "CIRCUIT_ID"
+            },
+            "path": [
+                "CIRCUIT_IDENTIFICATION"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "JavaScript1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "params"
+            },
+            "path": [
+                "CIRCUIT_IDENTIFICATION"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "JavaScript1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "MARKET_SEGMENTATION_ID"
+            },
+            "path": [
+                "COUNTRY_CODE"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "JavaScript1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "INTERNATIONAL_INDICATOR"
+            },
+            "path": [
+                "TELE_AUTH"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "JavaScript1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "ATT_CKT_ID"
+            },
+            "path": [
+                "ATT_CKT_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "JavaScript1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "CIRCUIT_FORMAT"
+            },
+            "path": [
+                "TYPE"
+            ]
+        }
+    ]
+}
