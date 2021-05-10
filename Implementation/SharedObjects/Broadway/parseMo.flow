@@ -86,8 +86,8 @@
                                     {
                                         "name": "script",
                                         "const": {
-                                            "userCode": "var recordType = line.substr(0, 1);\r\nvar result = {\r\n\tCIRCUIT_IDENTIFICATION : line.substr(1, 9).trim()\r\n};\r\nif(recordType === 'C') {\r\n\tresult[\"CIRCUIT_IDENTIFICATION\"] = line.substr(1, 9).trim();\r\n\tresult[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(10, 3).trim();\r\n\tresult[\"CKL_NO\"] = line.substr(12, 5).trim();\r\n\tresult[\"CKL_PROVG_ACC_ARNGMT\"] = line.substr(17, 2).trim();\r\n\tresult[\"LSO_CLLI\"] = line.substr(19, 11).trim();\r\n\tresult[\"COUNTRY_CODE\"] = line.substr(30, 2).trim();\r\n\tresult[\"TELE_AUTH\"] = line.substr(32, 12).trim();\r\n\tresult[\"ATT_CKT_ID\"] = line.substr(44, 25).trim();\r\n\tresult[\"ACCESS_CIRCUIT_ID\"] = line.substr(69).trim();\r\n\tresult[\"TYPE\"] = \"C\";\r\n} else if(recordType === 'S') {\r\n\tresult[\"CIRCUIT_IDENTIFICATION\"] = line.substr(1, 9).trim();\r\n\tresult[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(10, 3).trim();\r\n\tresult[\"CKL_NO\"] = line.substr(12, 5).trim();\r\n\tresult[\"CKL_PROVG_ACC_ARNGMT\"] = line.substr(17, 2).trim();\r\n\tresult[\"LSO_CLLI\"] = line.substr(19, 11).trim();\r\n\tresult[\"COUNTRY_CODE\"] = line.substr(30, 2).trim();\r\n\tresult[\"TELE_AUTH\"] = line.substr(32, 12).trim();\r\n\tresult[\"ATT_CKT_ID\"] = line.substr(44, 25).trim();\r\n\tresult[\"ACCESS_CIRCUIT_ID\"] = line.substr(69).trim();\r\n\tresult[\"TYPE\"] = \"S\";\r\n}\r\nresult;\r\n",
-                                            "script": "var recordType = line.substr(0, 1);\nvar result = {\n  CIRCUIT_IDENTIFICATION: line.substr(1, 9).trim()\n};\n\nif (recordType === 'C') {\n  result[\"CIRCUIT_IDENTIFICATION\"] = line.substr(1, 9).trim();\n  result[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(10, 3).trim();\n  result[\"CKL_NO\"] = line.substr(12, 5).trim();\n  result[\"CKL_PROVG_ACC_ARNGMT\"] = line.substr(17, 2).trim();\n  result[\"LSO_CLLI\"] = line.substr(19, 11).trim();\n  result[\"COUNTRY_CODE\"] = line.substr(30, 2).trim();\n  result[\"TELE_AUTH\"] = line.substr(32, 12).trim();\n  result[\"ATT_CKT_ID\"] = line.substr(44, 25).trim();\n  result[\"ACCESS_CIRCUIT_ID\"] = line.substr(69).trim();\n  result[\"TYPE\"] = \"C\";\n} else if (recordType === 'S') {\n  result[\"CIRCUIT_IDENTIFICATION\"] = line.substr(1, 9).trim();\n  result[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(10, 3).trim();\n  result[\"CKL_NO\"] = line.substr(12, 5).trim();\n  result[\"CKL_PROVG_ACC_ARNGMT\"] = line.substr(17, 2).trim();\n  result[\"LSO_CLLI\"] = line.substr(19, 11).trim();\n  result[\"COUNTRY_CODE\"] = line.substr(30, 2).trim();\n  result[\"TELE_AUTH\"] = line.substr(32, 12).trim();\n  result[\"ATT_CKT_ID\"] = line.substr(44, 25).trim();\n  result[\"ACCESS_CIRCUIT_ID\"] = line.substr(69).trim();\n  result[\"TYPE\"] = \"S\";\n}\n\nresult;"
+                                            "userCode": "// @@TODO change to real default values\r\nvar result = {\r\n\tCIRCUIT_IDENTIFICATION: 0,\r\n\tACC_ARRGMT_TYPE: '',\r\n\tACCESS_CIRCUIT_ID: '',\r\n\tACTION_CODE: '',\r\n\tASSOC_SWITCH: '',\r\n\tATT_CKT_ID: '',\r\n\tCC_SITE_ID: '',\r\n\tCHANNEL: '',\r\n\tCIRCUIT_FORMAT: '',\r\n\tCIRCUIT_SEGMENT_NUMBER: '',\r\n\tCKL_PROVG_ACC_ARNGMT: '',\r\n\tCKT_SUBD_MODIFY_DATE: '',\r\n\tCLLI_Z: '',\r\n\tCONE_EQUIP_ID: '',\r\n\tCOUNTRY_CODE: '', \r\n\tCRITICALITY_IND: '',\r\n\tCUST_ID: '',\r\n\tCUST_MCN: '',\r\n\tCUST_NAME: '',\r\n\tCUST_PORT: '',\r\n\tCUST_ROUTER_IP: '',\r\n\tCUSTOMER_NAME: '',\r\n\tDOMAIN_NAME: '',\r\n\tEQUIP_ID: '',\r\n\tEQUIP_NAME: '',\r\n\tEQUIP_NAME_CODE: '',\r\n\tFLOOR: '',\r\n\tGLOBAL_DLCI: '',\r\n\tGLOBAL_IW_IND: '',\r\n\tGLOBAL_VCI: '',\r\n\tGLOBAL_VPI: '',\r\n\tHIST_IND: '',\r\n\tHISTORICAL_NAME: '',\r\n\tINTEGRATED_ATT_CKT_ID: '',\r\n\tIOC: '',\r\n\tIOC_CKT_ID: '',\r\n\tIP_ADDRESS: '',\r\n\tIPL_Indicator: '',\r\n\tLOG_PORT: '',\r\n\tLSO_CLLI: '',\r\n\tMARKET_SEGMENTATION_ID: '',\r\n\tMASTER_CUSTOMER_NUMBER: '',\r\n\tMCO_CLLI: '',\r\n\tMINI_T1: '',\r\n\tMPC: '',\r\n\tMTCE_LCON_NAME: '',\r\n\tMTCE_LCON_PHONE: '',\r\n\tMULTIPOINT_INDICATOR: '',\r\n\tNAME: '',\r\n\tNETWORK: '',\r\n\tOCO_CLLI: '',\r\n\tPORT: '',\r\n\tPORT_SPEED: '',\r\n\tPOSITION: '',\r\n\tPREM_ADDRESS: '',\r\n\tPREM_CITY: '',\r\n\tPREM_COUNTRY: '',\r\n\tPREM_STATE: '',\r\n\tPTNII_EQUIP_NAME: '',\r\n\tPVC_COUNT: '',\r\n\tREGION_ID: '',\r\n\tREGION_NAME: '',\r\n\tROOM: '',\r\n\tSA_QUALIFYING_INDICATOR: '',\r\n\tSEGMENT_TYPE: '',\r\n\tSEQ_NO: '',\r\n\tSERVICE_CLASSIFICATION: '',\r\n\tSERVICE_OPTIONS: '',\r\n\tSHELF: '',\r\n\tSITE_ID: '',\r\n\tSLOT: '',\r\n\tSUB_REGION_NAME: '',\r\n\tTELE_AUTH: '',\r\n\tTOS: '',\r\n\tUNI_SUPPORT: '',\r\n\tVC_TYPE: '',\r\n\tVPOP_CLLI: '',\r\n\tVTNS_IND: '',\r\n\tVTNS_NMC: '',\r\n\tVTNS_NMC_TEL: '',\r\n\tIN_EFFECT_DATE: ''\r\n};\r\n\r\nvar recType= line.substr(0, 1);\r\nif (recType === 'C') {\r\n\tresult[\"CIRCUIT_IDENTIFICATION\"] = parseInt(line.substr(1, 9).trim());\r\n\tresult[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(11, 3).trim();\r\n\tresult[\"CKL_NO\"] = line.substr(13, 4).trim();\r\n\tresult[\"CKL_PROVG_ACC_ARNGMT\"] = line.substr(17, 2).trim();\r\n\tresult[\"LSO_CLLI\"] = line.substr(19, 11).trim();\r\n\tresult[\"COUNTRY_CODE\"] = line.substr(30, 2).trim();\r\n\tresult[\"TELE_AUTH\"] = line.substr(32, 12).trim();\r\n\tresult[\"ATT_CKT_ID\"] = line.substr(44, 25).trim();\r\n\tresult[\"ACCESS_CIRCUIT_ID\"] = line.substr(69).trim();\r\n} else if(recType === 'S') {\r\n\tresult[\"CIRCUIT_IDENTIFICATION\"] = parseInt(line.substr(1, 9).trim());\r\n\tresult[\"CIRCUIT_FORMAT\"] = line.substr(10, 1).trim();\r\n\tresult[\"ATT_CKT_ID\"] = line.substr(11, 25).trim();\r\n\tresult[\"TOS\"] = line.substr(36,  7).trim();\r\n\tresult[\"MASTER_CUSTOMER_NUMBER\"] = line.substr(43, 10).trim();\r\n\tresult[\"MCO_CLLI\"] = line.substr(53, 11).trim();\r\n\tresult[\"OCO_CLLI\"] = line.substr(64, 11).trim();\r\n\tresult[\"MULTIPOINT_INDICATOR\"] = line.substr(75, 1).trim();\r\n\tresult[\"MARKET_SEGMENTATION_ID\"] = line.substr(76, 3).trim();\r\n\tresult[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(79, 3).trim();\r\n\tresult[\"SEGMENT_TYPE\"] = line.substr(82, 4).trim();\r\n\tresult[\"CKT_SUBD_MODIFY_DATE\"] = line.substr(86, 20).trim();\r\n\tresult[\"CLLI_A\"] = line.substr(106, 11).trim();\r\n\tresult[\"CLLI_Z\"] = line.substr(117, 11).trim();\r\n\tresult[\"SERVICE_CLASSIFICATION\"] = line.substr(128, 1).trim();\r\n\tresult[\"SA_QUALIFYING_INDICATOR\"] = line.substr(129, 1).trim();\r\n\tresult[\"IPL_Indicator\"] = line.substr(130, 1).trim();\r\n\tresult[\"CUSTOMER_NAME\"] = line.substr(131, 62).trim();\r\n}\r\nresult;\r\n\r\n\t// result[\"CIRCUIT_IDENTIFICATION\"] = parseInt(line.substr(, ).trim();\r\n\t// result[\"ACC_ARRGMT_TYPE\"] = line.substr(, ).trim();\r\n\t// result[\"ACCESS_CIRCUIT_ID\"] = line.substr(, ).trim();\r\n\t// result[\"ACTION_CODE\"] = line.substr(, ).trim();\r\n\t// result[\"ASSOC_SWITCH\"] = line.substr(, ).trim();\r\n\t// result[\"ATT_CKT_ID\"] = line.substr(, ).trim();\r\n\t// result[\"CC_SITE_ID\"] = line.substr(, ).trim();\r\n\t// result[\"CHANNEL\"] = line.substr(, ).trim();\r\n\t// result[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(, ).trim();\r\n\t// result[\"CKL_PROVG_ACC_ARNGMT\"] = line.substr(, ).trim();\r\n\t// result[\"CKT_SUBD_MODIFY_DATE\"] = line.substr(, ).trim();\r\n\t// result[\"CLLI_A\"] = line.substr(, ).trim();\r\n\t// result[\"CLLI_Z\"] = line.substr(, ).trim();\r\n\t// result[\"CONE_EQUIP_ID\"] = line.substr(, ).trim();\r\n\t// result[\"COUNTRY_CODE\"] = line.substr(, ).trim();\r\n\t// result[\"CRITICALITY_IND\"] = line.substr(, ).trim();\r\n\t// result[\"CUST_ID\"] = line.substr(, ).trim();\r\n\t// result[\"CUST_MCN\"] = line.substr(, ).trim();\r\n\t// result[\"CUST_NAME\"] = line.substr(, ).trim();\r\n\t// result[\"CUST_PORT\"] = line.substr(, ).trim();\r\n\t// result[\"CUST_ROUTER_IP\"] = line.substr(, ).trim();\r\n\t// result[\"CUSTOMER_NAME\"] = line.substr(, ).trim();\r\n\t// result[\"DOMAIN_NAME\"] = line.substr(, ).trim();\r\n\t// result[\"EQUIP_ID\"] = line.substr(, ).trim();\r\n\t// result[\"EQUIP_NAME\"] = line.substr(, ).trim();\r\n\t// result[\"EQUIP_NAME_CODE\"] = line.substr(, ).trim();\r\n\t// result[\"FLOOR\"] = line.substr(, ).trim();\r\n\t// result[\"GLOBAL_DLCI\"] = line.substr(, ).trim();\r\n\t// result[\"GLOBAL_IW_IND\"] = line.substr(, ).trim();\r\n\t// result[\"GLOBAL_VCI\"] = line.substr(, ).trim();\r\n\t// result[\"GLOBAL_VPI\"] = line.substr(, ).trim();\r\n\t// result[\"HIST_IND\"] = line.substr(, ).trim();\r\n\t// result[\"HISTORICAL_NAME\"] = line.substr(, ).trim();\r\n\t// result[\"INTEGRATED_ATT_CKT_ID\"] = line.substr(, ).trim();\r\n\t// result[\"IOC\"] = line.substr(, ).trim();\r\n\t// result[\"IOC_CKT_ID\"] = line.substr(, ).trim();\r\n\t// result[\"IP_ADDRESS\"] = line.substr(, ).trim();\r\n\t// result[\"IPL_Indicator\"] = line.substr(, ).trim();\r\n\t// result[\"LOG_PORT\"] = line.substr(, ).trim();\r\n\t// result[\"LSO_CLLI\"] = line.substr(, ).trim();\r\n\t// result[\"MARKET_SEGMENTATION_ID\"] = line.substr(, ).trim();\r\n\t// result[\"MASTER_CUSTOMER_NUMBER\"] = line.substr(, ).trim();\r\n\t// result[\"MCO_CLLI\"] = line.substr(, ).trim();\r\n\t// result[\"MINI_T1\"] = line.substr(, ).trim();\r\n\t// result[\"MPC\"] = line.substr(, ).trim();\r\n\t// result[\"MTCE_LCON_NAME\"] = line.substr(, ).trim();\r\n\t// result[\"MTCE_LCON_PHONE\"] = line.substr(, ).trim();\r\n\t// result[\"MULTIPOINT_INDICATOR\"] = line.substr(, ).trim();\r\n\t// result[\"NAME\"] = line.substr(, ).trim();\r\n\t// result[\"NETWORK\"] = line.substr(, ).trim();\r\n\t// result[\"OCO_CLLI\"] = line.substr(, ).trim();\r\n\t// result[\"PORT\"] = line.substr(, ).trim();\r\n\t// result[\"PORT_SPEED\"] = line.substr(, ).trim();\r\n\t// result[\"POSITION\"] = line.substr(, ).trim();\r\n\t// result[\"PREM_ADDRESS\"] = line.substr(, ).trim();\r\n\t// result[\"PREM_CITY\"] = line.substr(, ).trim();\r\n\t// result[\"PREM_COUNTRY\"] = line.substr(, ).trim();\r\n\t// result[\"PREM_STATE\"] = line.substr(, ).trim();\r\n\t// result[\"PTNII_EQUIP_NAME\"] = line.substr(, ).trim();\r\n\t// result[\"PVC_COUNT\"] = line.substr(, ).trim();\r\n\t// result[\"REGION_ID\"] = line.substr(, ).trim();\r\n\t// result[\"REGION_NAME\"] = line.substr(, ).trim();\r\n\t// result[\"ROOM\"] = line.substr(, ).trim();\r\n\t// result[\"SA_QUALIFYING_INDICATOR\"] = line.substr(, ).trim();\r\n\t// result[\"SEGMENT_TYPE\"] = line.substr(, ).trim();\r\n\t// result[\"SEQ_NO\"] = line.substr(, ).trim();\r\n\t// result[\"SERVICE_CLASSIFICATION\"] = line.substr(, ).trim();\r\n\t// result[\"SERVICE_OPTIONS\"] = line.substr(, ).trim();\r\n\t// result[\"SHELF\"] = line.substr(, ).trim();\r\n\t// result[\"SITE_ID \"] = line.substr(, ).trim();\r\n\t// result[\"SLOT\"] = line.substr(, ).trim();\r\n\t// result[\"SUB_REGION_NAME\"] = line.substr(, ).trim();\r\n\t// result[\"TELE_AUTH\"] = line.substr(, ).trim();\r\n\t// result[\"TOS\"] = line.substr(, ).trim();\r\n\t// result[\"UNI_SUPPORT\"] = line.substr(, ).trim();\r\n\t// result[\"VC_TYPE\"] = line.substr(, ).trim();\r\n\t// result[\"VPOP_CLLI\"] = line.substr(, ).trim();\r\n\t// result[\"VTNS_IND\"] = line.substr(, ).trim();\r\n\t// result[\"VTNS_NMC\"] = line.substr(, ).trim();\r\n\t// result[\"VTNS_NMC_TEL\"] = line.substr(, ).trim();\r\n\t// result[\"IN_EFFECT_DATE\"] = line.substr(, ).trim();",
+                                            "script": "// @@TODO change to real default values\nvar result = {\n  CIRCUIT_IDENTIFICATION: 0,\n  ACC_ARRGMT_TYPE: '',\n  ACCESS_CIRCUIT_ID: '',\n  ACTION_CODE: '',\n  ASSOC_SWITCH: '',\n  ATT_CKT_ID: '',\n  CC_SITE_ID: '',\n  CHANNEL: '',\n  CIRCUIT_FORMAT: '',\n  CIRCUIT_SEGMENT_NUMBER: '',\n  CKL_PROVG_ACC_ARNGMT: '',\n  CKT_SUBD_MODIFY_DATE: '',\n  CLLI_Z: '',\n  CONE_EQUIP_ID: '',\n  COUNTRY_CODE: '',\n  CRITICALITY_IND: '',\n  CUST_ID: '',\n  CUST_MCN: '',\n  CUST_NAME: '',\n  CUST_PORT: '',\n  CUST_ROUTER_IP: '',\n  CUSTOMER_NAME: '',\n  DOMAIN_NAME: '',\n  EQUIP_ID: '',\n  EQUIP_NAME: '',\n  EQUIP_NAME_CODE: '',\n  FLOOR: '',\n  GLOBAL_DLCI: '',\n  GLOBAL_IW_IND: '',\n  GLOBAL_VCI: '',\n  GLOBAL_VPI: '',\n  HIST_IND: '',\n  HISTORICAL_NAME: '',\n  INTEGRATED_ATT_CKT_ID: '',\n  IOC: '',\n  IOC_CKT_ID: '',\n  IP_ADDRESS: '',\n  IPL_Indicator: '',\n  LOG_PORT: '',\n  LSO_CLLI: '',\n  MARKET_SEGMENTATION_ID: '',\n  MASTER_CUSTOMER_NUMBER: '',\n  MCO_CLLI: '',\n  MINI_T1: '',\n  MPC: '',\n  MTCE_LCON_NAME: '',\n  MTCE_LCON_PHONE: '',\n  MULTIPOINT_INDICATOR: '',\n  NAME: '',\n  NETWORK: '',\n  OCO_CLLI: '',\n  PORT: '',\n  PORT_SPEED: '',\n  POSITION: '',\n  PREM_ADDRESS: '',\n  PREM_CITY: '',\n  PREM_COUNTRY: '',\n  PREM_STATE: '',\n  PTNII_EQUIP_NAME: '',\n  PVC_COUNT: '',\n  REGION_ID: '',\n  REGION_NAME: '',\n  ROOM: '',\n  SA_QUALIFYING_INDICATOR: '',\n  SEGMENT_TYPE: '',\n  SEQ_NO: '',\n  SERVICE_CLASSIFICATION: '',\n  SERVICE_OPTIONS: '',\n  SHELF: '',\n  SITE_ID: '',\n  SLOT: '',\n  SUB_REGION_NAME: '',\n  TELE_AUTH: '',\n  TOS: '',\n  UNI_SUPPORT: '',\n  VC_TYPE: '',\n  VPOP_CLLI: '',\n  VTNS_IND: '',\n  VTNS_NMC: '',\n  VTNS_NMC_TEL: '',\n  IN_EFFECT_DATE: ''\n};\nvar recType = line.substr(0, 1);\n\nif (recType === 'C') {\n  result[\"CIRCUIT_IDENTIFICATION\"] = parseInt(line.substr(1, 9).trim());\n  result[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(11, 3).trim();\n  result[\"CKL_NO\"] = line.substr(13, 4).trim();\n  result[\"CKL_PROVG_ACC_ARNGMT\"] = line.substr(17, 2).trim();\n  result[\"LSO_CLLI\"] = line.substr(19, 11).trim();\n  result[\"COUNTRY_CODE\"] = line.substr(30, 2).trim();\n  result[\"TELE_AUTH\"] = line.substr(32, 12).trim();\n  result[\"ATT_CKT_ID\"] = line.substr(44, 25).trim();\n  result[\"ACCESS_CIRCUIT_ID\"] = line.substr(69).trim();\n} else if (recType === 'S') {\n  result[\"CIRCUIT_IDENTIFICATION\"] = parseInt(line.substr(1, 9).trim());\n  result[\"CIRCUIT_FORMAT\"] = line.substr(10, 1).trim();\n  result[\"ATT_CKT_ID\"] = line.substr(11, 25).trim();\n  result[\"TOS\"] = line.substr(36, 7).trim();\n  result[\"MASTER_CUSTOMER_NUMBER\"] = line.substr(43, 10).trim();\n  result[\"MCO_CLLI\"] = line.substr(53, 11).trim();\n  result[\"OCO_CLLI\"] = line.substr(64, 11).trim();\n  result[\"MULTIPOINT_INDICATOR\"] = line.substr(75, 1).trim();\n  result[\"MARKET_SEGMENTATION_ID\"] = line.substr(76, 3).trim();\n  result[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(79, 3).trim();\n  result[\"SEGMENT_TYPE\"] = line.substr(82, 4).trim();\n  result[\"CKT_SUBD_MODIFY_DATE\"] = line.substr(86, 20).trim();\n  result[\"CLLI_A\"] = line.substr(106, 11).trim();\n  result[\"CLLI_Z\"] = line.substr(117, 11).trim();\n  result[\"SERVICE_CLASSIFICATION\"] = line.substr(128, 1).trim();\n  result[\"SA_QUALIFYING_INDICATOR\"] = line.substr(129, 1).trim();\n  result[\"IPL_Indicator\"] = line.substr(130, 1).trim();\n  result[\"CUSTOMER_NAME\"] = line.substr(131, 62).trim();\n}\n\nresult; // result[\"CIRCUIT_IDENTIFICATION\"] = parseInt(line.substr(, ).trim();\n// result[\"ACC_ARRGMT_TYPE\"] = line.substr(, ).trim();\n// result[\"ACCESS_CIRCUIT_ID\"] = line.substr(, ).trim();\n// result[\"ACTION_CODE\"] = line.substr(, ).trim();\n// result[\"ASSOC_SWITCH\"] = line.substr(, ).trim();\n// result[\"ATT_CKT_ID\"] = line.substr(, ).trim();\n// result[\"CC_SITE_ID\"] = line.substr(, ).trim();\n// result[\"CHANNEL\"] = line.substr(, ).trim();\n// result[\"CIRCUIT_SEGMENT_NUMBER\"] = line.substr(, ).trim();\n// result[\"CKL_PROVG_ACC_ARNGMT\"] = line.substr(, ).trim();\n// result[\"CKT_SUBD_MODIFY_DATE\"] = line.substr(, ).trim();\n// result[\"CLLI_A\"] = line.substr(, ).trim();\n// result[\"CLLI_Z\"] = line.substr(, ).trim();\n// result[\"CONE_EQUIP_ID\"] = line.substr(, ).trim();\n// result[\"COUNTRY_CODE\"] = line.substr(, ).trim();\n// result[\"CRITICALITY_IND\"] = line.substr(, ).trim();\n// result[\"CUST_ID\"] = line.substr(, ).trim();\n// result[\"CUST_MCN\"] = line.substr(, ).trim();\n// result[\"CUST_NAME\"] = line.substr(, ).trim();\n// result[\"CUST_PORT\"] = line.substr(, ).trim();\n// result[\"CUST_ROUTER_IP\"] = line.substr(, ).trim();\n// result[\"CUSTOMER_NAME\"] = line.substr(, ).trim();\n// result[\"DOMAIN_NAME\"] = line.substr(, ).trim();\n// result[\"EQUIP_ID\"] = line.substr(, ).trim();\n// result[\"EQUIP_NAME\"] = line.substr(, ).trim();\n// result[\"EQUIP_NAME_CODE\"] = line.substr(, ).trim();\n// result[\"FLOOR\"] = line.substr(, ).trim();\n// result[\"GLOBAL_DLCI\"] = line.substr(, ).trim();\n// result[\"GLOBAL_IW_IND\"] = line.substr(, ).trim();\n// result[\"GLOBAL_VCI\"] = line.substr(, ).trim();\n// result[\"GLOBAL_VPI\"] = line.substr(, ).trim();\n// result[\"HIST_IND\"] = line.substr(, ).trim();\n// result[\"HISTORICAL_NAME\"] = line.substr(, ).trim();\n// result[\"INTEGRATED_ATT_CKT_ID\"] = line.substr(, ).trim();\n// result[\"IOC\"] = line.substr(, ).trim();\n// result[\"IOC_CKT_ID\"] = line.substr(, ).trim();\n// result[\"IP_ADDRESS\"] = line.substr(, ).trim();\n// result[\"IPL_Indicator\"] = line.substr(, ).trim();\n// result[\"LOG_PORT\"] = line.substr(, ).trim();\n// result[\"LSO_CLLI\"] = line.substr(, ).trim();\n// result[\"MARKET_SEGMENTATION_ID\"] = line.substr(, ).trim();\n// result[\"MASTER_CUSTOMER_NUMBER\"] = line.substr(, ).trim();\n// result[\"MCO_CLLI\"] = line.substr(, ).trim();\n// result[\"MINI_T1\"] = line.substr(, ).trim();\n// result[\"MPC\"] = line.substr(, ).trim();\n// result[\"MTCE_LCON_NAME\"] = line.substr(, ).trim();\n// result[\"MTCE_LCON_PHONE\"] = line.substr(, ).trim();\n// result[\"MULTIPOINT_INDICATOR\"] = line.substr(, ).trim();\n// result[\"NAME\"] = line.substr(, ).trim();\n// result[\"NETWORK\"] = line.substr(, ).trim();\n// result[\"OCO_CLLI\"] = line.substr(, ).trim();\n// result[\"PORT\"] = line.substr(, ).trim();\n// result[\"PORT_SPEED\"] = line.substr(, ).trim();\n// result[\"POSITION\"] = line.substr(, ).trim();\n// result[\"PREM_ADDRESS\"] = line.substr(, ).trim();\n// result[\"PREM_CITY\"] = line.substr(, ).trim();\n// result[\"PREM_COUNTRY\"] = line.substr(, ).trim();\n// result[\"PREM_STATE\"] = line.substr(, ).trim();\n// result[\"PTNII_EQUIP_NAME\"] = line.substr(, ).trim();\n// result[\"PVC_COUNT\"] = line.substr(, ).trim();\n// result[\"REGION_ID\"] = line.substr(, ).trim();\n// result[\"REGION_NAME\"] = line.substr(, ).trim();\n// result[\"ROOM\"] = line.substr(, ).trim();\n// result[\"SA_QUALIFYING_INDICATOR\"] = line.substr(, ).trim();\n// result[\"SEGMENT_TYPE\"] = line.substr(, ).trim();\n// result[\"SEQ_NO\"] = line.substr(, ).trim();\n// result[\"SERVICE_CLASSIFICATION\"] = line.substr(, ).trim();\n// result[\"SERVICE_OPTIONS\"] = line.substr(, ).trim();\n// result[\"SHELF\"] = line.substr(, ).trim();\n// result[\"SITE_ID \"] = line.substr(, ).trim();\n// result[\"SLOT\"] = line.substr(, ).trim();\n// result[\"SUB_REGION_NAME\"] = line.substr(, ).trim();\n// result[\"TELE_AUTH\"] = line.substr(, ).trim();\n// result[\"TOS\"] = line.substr(, ).trim();\n// result[\"UNI_SUPPORT\"] = line.substr(, ).trim();\n// result[\"VC_TYPE\"] = line.substr(, ).trim();\n// result[\"VPOP_CLLI\"] = line.substr(, ).trim();\n// result[\"VTNS_IND\"] = line.substr(, ).trim();\n// result[\"VTNS_NMC\"] = line.substr(, ).trim();\n// result[\"VTNS_NMC_TEL\"] = line.substr(, ).trim();\n// result[\"IN_EFFECT_DATE\"] = line.substr(, ).trim();"
                                         }
                                     },
                                     {
@@ -178,56 +178,105 @@
                                     },
                                     {
                                         "name": "table",
-                                        "const": "UIS_CIRCUIT"
+                                        "const": "UIS_BMP_RECORD_PARSE"
                                     },
                                     {
                                         "name": "fields",
                                         "const": [
-                                            "CIRCUIT_ID",
-                                            "CIRCUIT_FORMAT",
+                                            "CIRCUIT_IDENTIFICATION",
+                                            "ACC_ARRGMT_TYPE",
+                                            "ACCESS_CIRCUIT_ID",
+                                            "ACTION_CODE",
+                                            "ASSOC_SWITCH",
                                             "ATT_CKT_ID",
-                                            "TOS",
-                                            "SERVICE_TYPE",
-                                            "CLCI_SPL_SER_SERIAL_NUMBER",
-                                            "CLCI_SPL_TEL",
-                                            "MASTER_CUSTOMER_NUMBER",
-                                            "GRC",
-                                            "SOC",
-                                            "BILLING_NAME",
-                                            "MULTIPOINT_INDICATOR",
-                                            "MARKET_SEGMENTATION_ID",
-                                            "SERVICE_CLASSIFICATION",
-                                            "IPL_INDICATOR",
+                                            "CC_SITE_ID",
+                                            "CHANNEL",
+                                            "CIRCUIT_FORMAT",
+                                            "CIRCUIT_SEGMENT_NUMBER",
+                                            "CKL_NO",
+                                            "CKL_PROVG_ACC_ARNGMT",
+                                            "CKT_SUBD_MODIFY_DATE",
+                                            "CLLI_A",
+                                            "CLLI_Z",
+                                            "CONE_EQUIP_ID",
+                                            "COUNTRY_CODE",
+                                            "CRITICALITY_IND",
+                                            "CUST_ID",
+                                            "CUST_MCN",
+                                            "CUST_NAME",
+                                            "CUST_PORT",
+                                            "CUST_ROUTER_IP",
                                             "CUSTOMER_NAME",
-                                            "SPEED",
-                                            "BASE_TRAFFIC_NUMBER",
-                                            "CLCI_MSG_LOC_A",
-                                            "CLCI_MSG_LOC_Z",
-                                            "PARENT_ATT_CKT_ID",
-                                            "CLCI_MSG_TTM",
-                                            "MARKET_CODE",
-                                            "POCITS_MCN",
-                                            "SYSTEM_RELATIONSHIP_FLAG",
-                                            "INTERNATIONAL_INDICATOR",
-                                            "SPEED_NUMERIC",
-                                            "EM_SERVICE_CLASS"
+                                            "DOMAIN_NAME",
+                                            "EQUIP_ID",
+                                            "EQUIP_NAME",
+                                            "EQUIP_NAME_CODE",
+                                            "FLOOR",
+                                            "GLOBAL_DLCI",
+                                            "GLOBAL_IW_IND",
+                                            "GLOBAL_VCI",
+                                            "GLOBAL_VPI",
+                                            "HIST_IND",
+                                            "HISTORICAL_NAME",
+                                            "INTEGRATED_ATT_CKT_ID",
+                                            "IOC",
+                                            "IOC_CKT_ID",
+                                            "IP_ADDRESS",
+                                            "IPL_Indicator",
+                                            "LOG_PORT",
+                                            "LSO_CLLI",
+                                            "MARKET_SEGMENTATION_ID",
+                                            "MASTER_CUSTOMER_NUMBER",
+                                            "MCO_CLLI",
+                                            "MINI_T1",
+                                            "MPC",
+                                            "MTCE_LCON_NAME",
+                                            "MTCE_LCON_PHONE",
+                                            "MULTIPOINT_INDICATOR",
+                                            "NAME",
+                                            "NETWORK",
+                                            "OCO_CLLI",
+                                            "PORT",
+                                            "PORT_SPEED",
+                                            "POSITION",
+                                            "PREM_ADDRESS",
+                                            "PREM_CITY",
+                                            "PREM_COUNTRY",
+                                            "PREM_STATE",
+                                            "PTNII_EQUIP_NAME",
+                                            "PVC_COUNT",
+                                            "REGION_ID",
+                                            "REGION_NAME",
+                                            "ROOM",
+                                            "SA_QUALIFYING_INDICATOR",
+                                            "SEGMENT_TYPE",
+                                            "SEQ_NO",
+                                            "SERVICE_CLASSIFICATION",
+                                            "SERVICE_OPTIONS",
+                                            "SHELF",
+                                            "SITE_ID",
+                                            "SLOT",
+                                            "SUB_REGION_NAME",
+                                            "TELE_AUTH",
+                                            "TOS",
+                                            "UNI_SUPPORT",
+                                            "VC_TYPE",
+                                            "VPOP_CLLI",
+                                            "VTNS_IND",
+                                            "VTNS_NMC",
+                                            "VTNS_NMC_TEL",
+                                            "IN_EFFECT_DATE"
                                         ]
                                     },
                                     {
                                         "name": "keys",
                                         "const": [
-                                            "CIRCUIT_ID"
+                                            "CIRCUIT_IDENTIFICATION"
                                         ]
                                     },
                                     {
                                         "name": "dialect",
                                         "const": "sqlite"
-                                    },
-                                    {
-                                        "name": "CIRCUIT_ID",
-                                        "schema": {
-                                            "type": "string"
-                                        }
                                     },
                                     {
                                         "name": "CIRCUIT_FORMAT",
@@ -246,31 +295,7 @@
                                         "schema": {}
                                     },
                                     {
-                                        "name": "SERVICE_TYPE",
-                                        "schema": {}
-                                    },
-                                    {
-                                        "name": "CLCI_SPL_SER_SERIAL_NUMBER",
-                                        "schema": {}
-                                    },
-                                    {
-                                        "name": "CLCI_SPL_TEL",
-                                        "schema": {}
-                                    },
-                                    {
                                         "name": "MASTER_CUSTOMER_NUMBER",
-                                        "schema": {}
-                                    },
-                                    {
-                                        "name": "GRC",
-                                        "schema": {}
-                                    },
-                                    {
-                                        "name": "SOC",
-                                        "schema": {}
-                                    },
-                                    {
-                                        "name": "BILLING_NAME",
                                         "schema": {}
                                     },
                                     {
@@ -288,61 +313,307 @@
                                         "schema": {}
                                     },
                                     {
-                                        "name": "IPL_INDICATOR",
-                                        "schema": {}
-                                    },
-                                    {
                                         "name": "CUSTOMER_NAME",
                                         "schema": {}
                                     },
                                     {
-                                        "name": "SPEED",
+                                        "name": "CIRCUIT_IDENTIFICATION",
                                         "schema": {}
                                     },
                                     {
-                                        "name": "BASE_TRAFFIC_NUMBER",
+                                        "name": "ACC_ARRGMT_TYPE",
                                         "schema": {}
                                     },
                                     {
-                                        "name": "CLCI_MSG_LOC_A",
+                                        "name": "ACCESS_CIRCUIT_ID",
                                         "schema": {}
                                     },
                                     {
-                                        "name": "CLCI_MSG_LOC_Z",
+                                        "name": "ACTION_CODE",
                                         "schema": {}
                                     },
                                     {
-                                        "name": "PARENT_ATT_CKT_ID",
+                                        "name": "ASSOC_SWITCH",
                                         "schema": {}
                                     },
                                     {
-                                        "name": "CLCI_MSG_TTM",
+                                        "name": "CC_SITE_ID",
                                         "schema": {}
                                     },
                                     {
-                                        "name": "MARKET_CODE",
+                                        "name": "CHANNEL",
                                         "schema": {}
                                     },
                                     {
-                                        "name": "POCITS_MCN",
+                                        "name": "CIRCUIT_SEGMENT_NUMBER",
                                         "schema": {}
                                     },
                                     {
-                                        "name": "SYSTEM_RELATIONSHIP_FLAG",
+                                        "name": "CKL_NO",
                                         "schema": {}
                                     },
                                     {
-                                        "name": "INTERNATIONAL_INDICATOR",
-                                        "schema": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    {
-                                        "name": "SPEED_NUMERIC",
+                                        "name": "CKL_PROVG_ACC_ARNGMT",
                                         "schema": {}
                                     },
                                     {
-                                        "name": "EM_SERVICE_CLASS",
+                                        "name": "CKT_SUBD_MODIFY_DATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CLLI_A",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CLLI_Z",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CONE_EQUIP_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "COUNTRY_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CRITICALITY_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CUST_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CUST_MCN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CUST_NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CUST_PORT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CUST_ROUTER_IP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DOMAIN_NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EQUIP_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EQUIP_NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EQUIP_NAME_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FLOOR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "GLOBAL_DLCI",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "GLOBAL_IW_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "GLOBAL_VCI",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "GLOBAL_VPI",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HIST_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HISTORICAL_NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "INTEGRATED_ATT_CKT_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IOC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IOC_CKT_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IP_ADDRESS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IPL_Indicator",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LOG_PORT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LSO_CLLI",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MCO_CLLI",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MINI_T1",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MPC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MTCE_LCON_NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MTCE_LCON_PHONE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NETWORK",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "OCO_CLLI",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PORT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PORT_SPEED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POSITION",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PREM_ADDRESS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PREM_CITY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PREM_COUNTRY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PREM_STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTNII_EQUIP_NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PVC_COUNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "REGION_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "REGION_NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ROOM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SA_QUALIFYING_INDICATOR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SEGMENT_TYPE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SEQ_NO",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SERVICE_OPTIONS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SHELF",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SITE_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SLOT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SUB_REGION_NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TELE_AUTH",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "UNI_SUPPORT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VC_TYPE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VPOP_CLLI",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VTNS_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VTNS_NMC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VTNS_NMC_TEL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IN_EFFECT_DATE",
                                         "schema": {}
                                     }
                                 ],
@@ -393,76 +664,8 @@
             },
             "rightPort": {
                 "actor": "DbLoad1",
-                "name": "CIRCUIT_ID"
-            },
-            "path": [
-                "CIRCUIT_IDENTIFICATION"
-            ]
-        },
-        {
-            "leftPort": {
-                "actor": "JavaScript1",
-                "name": "result"
-            },
-            "rightPort": {
-                "actor": "DbLoad1",
                 "name": "params"
-            },
-            "path": [
-                "CIRCUIT_IDENTIFICATION"
-            ]
-        },
-        {
-            "leftPort": {
-                "actor": "JavaScript1",
-                "name": "result"
-            },
-            "rightPort": {
-                "actor": "DbLoad1",
-                "name": "MARKET_SEGMENTATION_ID"
-            },
-            "path": [
-                "COUNTRY_CODE"
-            ]
-        },
-        {
-            "leftPort": {
-                "actor": "JavaScript1",
-                "name": "result"
-            },
-            "rightPort": {
-                "actor": "DbLoad1",
-                "name": "INTERNATIONAL_INDICATOR"
-            },
-            "path": [
-                "TELE_AUTH"
-            ]
-        },
-        {
-            "leftPort": {
-                "actor": "JavaScript1",
-                "name": "result"
-            },
-            "rightPort": {
-                "actor": "DbLoad1",
-                "name": "ATT_CKT_ID"
-            },
-            "path": [
-                "ATT_CKT_ID"
-            ]
-        },
-        {
-            "leftPort": {
-                "actor": "JavaScript1",
-                "name": "result"
-            },
-            "rightPort": {
-                "actor": "DbLoad1",
-                "name": "CIRCUIT_FORMAT"
-            },
-            "path": [
-                "TYPE"
-            ]
+            }
         }
     ]
 }
